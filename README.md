@@ -283,3 +283,14 @@ lung-tumor-segmentation/
 ---
 
 > ⚠️ This project is for educational and research purposes only. Not intended for clinical diagnosis or medical use.
+
+---
+
+## 🤝 Contributors
+
+| Name | GitHub | Role |
+|------|--------|------|
+| TanishDevX | [@TanishDevX](https://github.com/TanishDevX) | Project Lead |
+| | | |
+| | | |
+
