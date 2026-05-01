@@ -288,11 +288,8 @@ lung-tumor-segmentation/
 
 ## 🤝 Contributors
 
-<!-- To add: | [@username](https://github.com/username) | -->
-<!-- To remove: delete that line -->
-
-| GitHub |
-|--------|
-| [@lokeshmudgal0004](https://github.com/lokeshmudgal0004) |
-| |
-<!-- Add more contributors above this line -->
+| Name | GitHub |
+|------|--------|
+| Sumit Kumar | [@sumit-Kumar023](https://github.com/sumit-Kumar023) |
+| Lokesh Mudgal | [@lokeshmudgal0004](https://github.com/lokeshmudgal0004) |
+| Ronit Yadav | [@ronnnie-cr7](https://github.com/ronnnie-cr7) |
