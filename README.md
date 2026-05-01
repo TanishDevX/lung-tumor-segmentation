@@ -280,11 +280,7 @@ lung-tumor-segmentation/
 **TanishDevX**  
 [Hugging Face](https://huggingface.co/TanishDevX) • [GitHub](https://github.com/TanishDevX)
 
----
 
-> ⚠️ This project is for educational and research purposes only. Not intended for clinical diagnosis or medical use.
-
----
 
 ## 🤝 Contributors
 
@@ -293,3 +289,9 @@ lung-tumor-segmentation/
 | Sumit Kumar | [@sumit-Kumar023](https://github.com/sumit-Kumar023) |
 | Lokesh Mudgal | [@lokeshmudgal0004](https://github.com/lokeshmudgal0004) |
 | Ronit Yadav | [@ronnnie-cr7](https://github.com/ronnnie-cr7) |
+
+---
+
+> ⚠️ This project is for educational and research purposes only. Not intended for clinical diagnosis or medical use.
+
+---
