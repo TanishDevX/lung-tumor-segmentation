@@ -288,9 +288,11 @@ lung-tumor-segmentation/
 
 ## 🤝 Contributors
 
-| Name | GitHub | Role |
-|------|--------|------|
-| TanishDevX | [@TanishDevX](https://github.com/TanishDevX) | Project Lead |
-| | | |
-| | | |
+<!-- To add: | [@username](https://github.com/username) | -->
+<!-- To remove: delete that line -->
 
+| GitHub |
+|--------|
+| [@lokeshmudgal0004](https://github.com/lokeshmudgal0004) |
+| |
+<!-- Add more contributors above this line -->
