@@ -5,6 +5,26 @@ A 3D U-Net based lung tumor segmentation system trained on the LIDC-IDRI dataset
 ## 🔗 Live Demo
 **[Try it on Hugging Face Spaces](https://huggingface.co/spaces/TanishDevX/lung-tumor-segmentation)**
 
+> 💡 **Quick Test:** Download any `.npy` file from the [`samples/`](./samples) folder and upload it directly to the demo — no setup needed!
+
+---
+
+## 🧪 Try It Yourself
+
+1. Go to the [`samples/`](./samples) folder in this repo
+2. Download any `.npy` file
+3. Open the [Live Demo](https://huggingface.co/spaces/TanishDevX/lung-tumor-segmentation)
+4. Upload the `.npy` file and click **Run Detection**
+5. View segmentation across all 8 CT slices with tumor location report
+
+### Sample Files Included
+| Folder | Count | Description |
+|--------|-------|-------------|
+| `demo_sample_0` to `demo_sample_9` | 10 files | Best predictions — Dice > 0.85, clear tumor detection |
+| `random_sample_0` to `random_sample_4` | 5 files | Random validation samples — mixed difficulty |
+
+Each file contains 8 consecutive CT slices in shape `(8, 128, 128, 1)`.
+
 ---
 
 ## 📊 Results
@@ -28,6 +48,10 @@ loss = 0.5 * BCE + 0.5 * Dice
 - **BCE** enforces pixel-level accuracy and penalises false positives/negatives directly
 - **Dice** handles class imbalance between nodule and background regions
 - Together they produce more reliable, calibrated predictions
+
+The slight Dice drop in M4 reflects the model being more honest — less
+overconfident on easy background regions — while delivering measurably
+better sensitivity and specificity.
 
 ### Validation Metrics (Best Model — M4 Phase 2)
 | Metric | Score | Interpretation |
@@ -81,6 +105,10 @@ lung-tumor-segmentation/
 │   ├── M4_phase2_log.csv              # Phase 2 training history
 │   └── M4_phase2_retry_log.csv        # Phase 2 retry history
 │
+├── samples/                           # Ready-to-use demo .npy files
+│   ├── demo_sample_0.npy  ..  9.npy   # Best predictions (Dice > 0.85)
+│   └── random_sample_0.npy .. 4.npy   # Random validation samples
+│
 └── README.md
 ```
 
@@ -104,22 +132,6 @@ M2 Baseline → M3 Augmented → M4 Phase 1 (freeze encoder)
                               M4 Phase 2 (unfreeze layers 28–37)
                                        ↓
                               Best Val Dice: 0.7484
-```
-
----
-
-## 🚀 How to Use the Demo
-
-1. Go to [Hugging Face Space](https://huggingface.co/spaces/TanishDevX/lung-tumor-segmentation)
-2. Upload a `.npy` CT volume file with shape `(8, 128, 128, 1)`
-3. Click **Run Detection**
-4. View segmentation across all 8 slices with tumor location report
-
-### Prepare a Test Sample
-```python
-import numpy as np
-sample = X_val[0]  # shape (8, 128, 128, 1)
-np.save('sample.npy', sample)
 ```
 
 ---
