@@ -279,11 +279,6 @@ lung-tumor-segmentation/
 
 **TanishDevX**  
 [Hugging Face](https://huggingface.co/TanishDevX) • [GitHub](https://github.com/TanishDevX)
-**lokeshmudgal**
-[GitHub](https://github.com/lokeshmudgal0004)
-**Ronit**
-[GitHub](https://github.com/ronnnie-cr7)
-
 
 ---
 
