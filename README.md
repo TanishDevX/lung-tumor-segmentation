@@ -210,9 +210,7 @@ np.save('my_sample.npy', sample)
 ### Sample Files Included
 | Files | Count | Description |
 |-------|-------|-------------|
-| `demo_sample_0` to `demo_sample_9` | 10 | Best predictions — Dice > 0.85 |
-| `random_sample_0` to `random_sample_4` | 5 | Random samples — mixed difficulty |
-
+| `demo_sample_XXX` to `demo_sample_XXX` | 10 | Best predictions — Dice > 0.85 |
 ---
 
 ## 📁 Repository Structure
@@ -240,8 +238,7 @@ lung-tumor-segmentation/
 │   └── *.png                          # Dice & loss plots for all stages
 │
 ├── samples/
-│   ├── demo_sample_0.npy .. 9.npy     # Best predictions (Dice > 0.85)
-│   └── random_sample_0.npy .. 4.npy   # Random validation samples
+│   ├── demo_sample_X.npy .. XX.npy
 │
 └── README.md
 ```
