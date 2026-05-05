@@ -1,0 +1,15 @@
+# Large model files
+*.h5
+*.keras
+
+# Large data files
+*.npy
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Colab system files
+.config/
