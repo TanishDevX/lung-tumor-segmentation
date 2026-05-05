@@ -97,28 +97,28 @@ Attention gates at every skip connection suppress irrelevant activations and foc
 - Identified class imbalance — informed loss function choice
 - Decided 128×128 resolution and 8-slice depth from data distribution
 
-### [`Attention_M1.ipynb`](./notebooks/Attention_M1.ipynb) — Baseline Attention U-Net
+### [`Attention_NB1.ipynb`](./notebooks/Attention_NB1.ipynb) — Baseline Attention U-Net
 - Designed the 3D Attention U-Net architecture from scratch
 - Loss: BCE + Dice (0.5 each) | Optimizer: Adam | Epochs: 30 | Batch size: 4
 - **Note:** augmentation was written using Python `if` inside `tf.data.map()` — a silent bug that caused conditions to be evaluated once at graph build time, not per sample. Fixed in NB4 using `tf.cond`.
 - Saved weights: `attention_unet_best.keras`
 - **Result: Val Dice 0.7429 | Test Dice 0.7234**
 
-### [`Attention_M2.ipynb`](./notebooks/Attention_M2.ipynb) — Fine-tuning Attempt
+### [`Attention_NB2.ipynb`](./notebooks/Attention_NB2.ipynb) — Fine-tuning Attempt
 - Loaded NB1 weights; unfroze all layers except BatchNorm
 - Cosine LR schedule: 1e-4 → 1e-6 | Batch size: 2 | Early stopped at epoch 11/21
 - Cosine LR decayed too fast (~920 steps/epoch) — premature convergence
 - Saved weights: `M4_finetuned_best.keras`
 - **Result: Val Dice 0.7471 | Test Dice 0.7380**
 
-### [`Attention_M3.ipynb`](./notebooks/Attention_M3.ipynb) — Best Model ✓
+### [`Attention_NB3.ipynb`](./notebooks/Attention_NB3.ipynb) — Best Model ✓
 - Loaded NB2 weights; switched loss to **Focal + Dice** (0.5 each)
 - Warmup LR: 2e-5 → 8e-5, then ReduceLROnPlateau | BatchNorm unfrozen at epoch 5
 - Trained 50 epochs, patience 15 | Batch size: 2
 - Saved weights: `NB3_best.keras` ← **best model, used in deployment**
 - **Result: Val Dice 0.7700 | Test Dice 0.7842**
 
-### [`Attention_M4.ipynb`](./notebooks/Attention_M4.ipynb) — Augmentation Experiment
+### [`Attention_NB4.ipynb`](./notebooks/Attention_NB4.ipynb) — Augmentation Experiment
 - Identified and fixed the `tf.cond` augmentation bug from NB1
 - Loaded NB3 weights; fine-tuned with H-flip, V-flip, depth-flip, Gaussian noise, brightness jitter
 - All augmentations use `tf.cond` — evaluated per sample inside the tf graph
@@ -220,10 +220,10 @@ lung-tumor-segmentation/
 │
 ├── notebooks/
 │   ├── EDA.ipynb                       # Dataset exploration & analysis
-│   ├── Attention_M1.ipynb              # Baseline 3D Attention U-Net
-│   ├── Attention_M2.ipynb              # Fine-tuning attempt (cosine LR)
-│   ├── Attention_M3.ipynb              # Best model — Focal+Dice, warmup LR
-│   ├── Attention_M4.ipynb              # Augmentation experiment (tf.cond fix)
+│   ├── Attention_NB1.ipynb              # Baseline 3D Attention U-Net
+│   ├── Attention_NB2.ipynb              # Fine-tuning attempt (cosine LR)
+│   ├── Attention_NB3.ipynb              # Best model — Focal+Dice, warmup LR
+│   ├── Attention_NB4.ipynb              # Augmentation experiment (tf.cond fix)
 │   └── Deployment.ipynb                # Metrics, evaluation & Gradio app
 │
 ├── app/
@@ -231,10 +231,10 @@ lung-tumor-segmentation/
 │   └── requirements.txt               # Python dependencies
 │
 ├── results/
-│   ├── M2_training_log.csv            # NB1 training history
-│   ├── M2_phase2_log.csv              # NB2 training history
-│   ├── M3_training_log.csv            # NB3 training history
-│   ├── M4_training_log.csv            # NB4 training history
+│   ├── NB1_training_log.csv            # NB1 training history
+│   ├── NB2_training_log.csv              # NB2 training history
+│   ├── NB3_training_log.csv            # NB3 training history
+│   ├── NB4_training_log.csv            # NB4 training history
 │   └── *.png                          # Dice & loss plots for all stages
 │
 ├── samples/
