@@ -16,7 +16,7 @@
 |----------|------|
 | 🚀 Live Demo | [Hugging Face Spaces](https://huggingface.co/spaces/TanishDevX/lung-tumor-segmentation) |
 | 📂 GitHub Repo | [TanishDevX/lung-tumor-segmentation](https://github.com/TanishDevX/lung-tumor-segmentation) |
-| 🗂️ Dataset | [LIDC-IDRI on TCIA](https://www.cancerimagingarchive.net/collection/lidc-idri/) |
+| 🗂️ Dataset | [LIDC-IDRI on Kaggle](https://www.kaggle.com/datasets/zhangweiled/lidcidri/data) |
 
 > 💡 **Quick Test:** Download any `.npy` file from [`samples/`](./samples) and upload it to the demo — no setup needed!
 
